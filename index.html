@@ -4,189 +4,425 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mahaboob Sharief Syed | Agentic AI Engineer</title>
+<title>Sharief | AI Engineer Portfolio</title>
 
 <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html {
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #0b1120;
-    color: #e5e7eb;
-    line-height: 1.7;
+    font-family: 'Segoe UI', sans-serif;
+    background: #080b16;
+    color: #fff;
+}
+
+:root {
+    --primary: #a78bfa;
+    --secondary: #38bdf8;
+    --card: #111629;
+    --muted: #a1a1aa;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* NAVBAR */
+
+header {
+    padding: 22px 0;
+    background: rgba(8,11,22,0.95);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #22283a;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 8%;
-    background: #111827;
-    position: sticky;
-    top: 0;
-    z-index: 10;
 }
 
 .logo {
-    font-size: 23px;
-    color: #38bdf8;
+    font-size: 27px;
     font-weight: bold;
+    color: var(--primary);
 }
 
-nav a {
-    color: #d1d5db;
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
     text-decoration: none;
-    margin-left: 20px;
+    color: #ddd;
     font-size: 14px;
 }
 
-nav a:hover {
-    color: #38bdf8;
+.nav-links a:hover {
+    color: var(--primary);
 }
 
-section {
-    padding: 70px 8%;
+.menu-btn {
+    display: none;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
 }
+
+/* HERO */
 
 .hero {
-    min-height: 500px;
+    min-height: 650px;
     display: flex;
     align-items: center;
-    background: linear-gradient(120deg, #111827, #172554);
+    background:
+    radial-gradient(circle at 80% 40%, #35205e 0%, transparent 35%),
+    #080b16;
 }
 
-.hero-content {
-    max-width: 750px;
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 9px 17px;
+    border: 1px solid #6850a8;
+    color: var(--primary);
+    border-radius: 30px;
+    margin-bottom: 25px;
+    font-size: 13px;
 }
 
 .hero h1 {
-    font-size: 48px;
-    color: white;
-    margin-bottom: 10px;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.15;
+    margin-bottom: 15px;
 }
 
-.hero h2 {
-    color: #38bdf8;
-    font-size: 25px;
+.gradient-text {
+    background: linear-gradient(90deg,#a78bfa,#38bdf8);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero h3 {
+    color: #c4b5fd;
+    font-size: 22px;
     margin-bottom: 20px;
 }
 
 .hero p {
-    color: #cbd5e1;
-    margin-bottom: 25px;
-}
-
-.btn {
-    display: inline-block;
-    background: #0284c7;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 6px;
-    text-decoration: none;
-    margin-right: 10px;
-}
-
-.btn:hover {
-    background: #0369a1;
-}
-
-.section-title {
-    font-size: 30px;
-    color: #38bdf8;
+    color: var(--muted);
+    max-width: 650px;
+    line-height: 1.9;
     margin-bottom: 30px;
 }
 
-.card {
-    background: #172033;
-    padding: 25px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #293548;
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-.card h3 {
+.btn {
+    padding: 13px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.primary {
+    background: linear-gradient(90deg,#8b5cf6,#6366f1);
     color: white;
+}
+
+.outline {
+    border: 1px solid #555;
+    color: white;
+}
+
+.profile-box {
+    background: linear-gradient(145deg,#1e1b3b,#111629);
+    border: 1px solid #493879;
+    padding: 35px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 15px 60px #0008;
+}
+
+.avatar {
+    width: 145px;
+    height: 145px;
+    margin: auto auto 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#8b5cf6,#38bdf8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+    font-weight: bold;
+}
+
+.profile-box h2 {
     margin-bottom: 8px;
 }
 
-.card p {
-    color: #cbd5e1;
+.profile-box p {
+    color: var(--muted);
+    font-size: 14px;
 }
 
-.date {
-    color: #38bdf8 !important;
-    font-size: 14px;
+.status {
+    color: #4ade80;
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+/* COMMON */
+
+section {
+    padding: 85px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    font-size: 36px;
     margin-bottom: 12px;
 }
 
-.skills {
+.section-heading p {
+    color: var(--muted);
+}
+
+.about-card, .card {
+    background: var(--card);
+    border: 1px solid #262d43;
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.about-card p {
+    color: #cbd5e1;
+    line-height: 2;
+}
+
+/* SKILLS */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.card h3 {
+    color: var(--primary);
+    margin-bottom: 18px;
+}
+
+.tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
 }
 
-.skill {
-    background: #172e48;
-    color: #7dd3fc;
-    padding: 9px 16px;
-    border-radius: 20px;
+.tags span {
+    background: #202943;
+    color: #c4b5fd;
+    padding: 8px 13px;
+    border-radius: 7px;
+    font-size: 13px;
+}
+
+/* EXPERIENCE */
+
+.timeline {
+    max-width: 850px;
+    margin: auto;
+}
+
+.timeline .card {
+    margin-bottom: 25px;
+    border-left: 4px solid var(--primary);
+}
+
+.card .date {
+    color: var(--secondary);
     font-size: 14px;
+    margin: 8px 0 15px;
 }
 
-ul {
+.card ul {
     padding-left: 20px;
     color: #cbd5e1;
 }
 
-li {
-    margin-bottom: 8px;
+.card li {
+    margin-bottom: 10px;
 }
 
-.contact {
-    background: #111827;
-    text-align: center;
+/* PROJECTS */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 25px;
 }
 
-.contact p {
+.project-card {
+    background: linear-gradient(145deg,#171d34,#111629);
+    border: 1px solid #34314f;
+    padding: 30px;
+    border-radius: 17px;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--primary);
+}
+
+.project-icon {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.project-card h3 {
+    color: white;
     margin-bottom: 12px;
 }
 
-.contact a {
-    color: #38bdf8;
+.project-card p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.project-card .tech {
+    margin-top: 20px;
+    color: var(--secondary);
+    font-size: 13px;
+}
+
+/* CERTIFICATIONS */
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+}
+
+.cert {
+    padding: 22px;
+    background: var(--card);
+    border-radius: 12px;
+    border: 1px solid #262d43;
+    color: #ddd;
+}
+
+/* CONTACT */
+
+.contact-box {
+    background: linear-gradient(120deg,#27204b,#11233c);
+    padding: 50px 25px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.contact-box h2 {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.contact-box p {
+    color: #cbd5e1;
+    margin-bottom: 20px;
+}
+
+.contact-box a {
+    color: var(--secondary);
     text-decoration: none;
 }
 
+/* FOOTER */
+
 footer {
-    background: #080d18;
     text-align: center;
-    padding: 20px;
-    color: #94a3b8;
+    padding: 25px;
+    color: #888;
+    border-top: 1px solid #262d43;
 }
 
-@media(max-width: 768px) {
-    nav {
-        flex-direction: column;
-        gap: 12px;
+/* RESPONSIVE */
+
+@media(max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        padding: 70px 0;
     }
 
-    nav a {
-        margin: 5px;
+    .profile-box {
+        max-width: 400px;
+        margin: auto;
+    }
+
+    .skills-grid, .cert-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width: 650px) {
+    .container {
+        width: 90%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #111629;
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .skills-grid, .project-grid, .cert-grid {
+        grid-template-columns: 1fr;
     }
 
     .hero h1 {
-        font-size: 34px;
+        font-size: 39px;
     }
 
-    section {
-        padding: 50px 6%;
+    .section-heading h2 {
+        font-size: 29px;
     }
 }
 </style>
@@ -194,217 +430,326 @@ footer {
 
 <body>
 
-<!-- Navigation -->
-<nav>
-    <div class="logo">Sharief.</div>
-    <div>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
-</nav>
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">Sharief<span>.</span></div>
 
-<!-- Hero Section -->
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
 <section class="hero">
-    <div class="hero-content">
-        <h1>Mahaboob Sharief Syed</h1>
+<div class="container">
+<div class="hero-grid">
 
-        <h2>Agentic AI Engineer | Python AI Developer</h2>
+<div>
+    <span class="tag">✦ Agentic AI Engineer</span>
 
-        <p>
-            AI Software Developer with 3+ years of experience building
-            AI-driven applications, intelligent agents, RAG systems,
-            and enterprise backend solutions. Passionate about developing
-            scalable AI applications using Python, LLMs, MCP and Agentic AI.
-        </p>
+    <h1>Hello, I'm<br>
+        <span class="gradient-text">Mahaboob Sharief Syed</span>
+    </h1>
 
-        <a href="#contact" class="btn">Contact Me</a>
+    <h3>Python AI Developer | LLM Engineer</h3>
 
-        <a href="#projects" class="btn">View Projects</a>
+    <p>
+        Building intelligent AI agents, enterprise RAG systems,
+        and next-generation AI applications.
+        Experienced in Python, FastAPI, LangChain, LangGraph,
+        MCP and Generative AI.
+    </p>
+
+    <div class="buttons">
+        <a href="#projects" class="btn primary">Explore My Work →</a>
+        <a href="#contact" class="btn outline">Let's Connect</a>
     </div>
+</div>
+
+<div class="profile-box">
+    <div class="avatar">MS</div>
+    <h2>Sharief Syed</h2>
+    <p>Agentic AI Engineer</p>
+    <p>Python & Generative AI Developer</p>
+    <div class="status">● Open to Opportunities</div>
+</div>
+
+</div>
+</div>
 </section>
 
-<!-- About -->
+<!-- ABOUT -->
 <section id="about">
-    <h2 class="section-title">About Me</h2>
+<div class="container">
+<div class="section-heading">
+    <h2>About <span class="gradient-text">Me</span></h2>
+    <p>My professional journey in AI and software development</p>
+</div>
 
-    <div class="card">
-        <p>
-            I am an AI Software Developer with over 3 years of experience
-            in Python backend development and AI-powered applications.
-            My expertise includes Agentic AI, LLM integration, multi-agent
-            workflows, Retrieval-Augmented Generation (RAG), Knowledge
-            Graphs and Model Context Protocol (MCP).
-        </p>
-        <br>
-        <p>
-            I enjoy building intelligent solutions that automate business
-            workflows, improve information retrieval and solve real-world
-            business problems.
-        </p>
-    </div>
+<div class="about-card">
+    <p>
+        I am an AI Software Developer with 3+ years of experience
+        building AI-driven applications and backend solutions.
+        My expertise includes Agentic AI, LLM integration,
+        multi-agent systems, Retrieval-Augmented Generation (RAG),
+        Knowledge Graphs and Model Context Protocol (MCP).
+        <br><br>
+        I specialize in Python, FastAPI, LangChain and LangGraph,
+        with hands-on experience integrating AI capabilities
+        into enterprise applications and automating business workflows.
+        I enjoy solving complex problems through practical AI solutions.
+    </p>
+</div>
+</div>
 </section>
 
-<!-- Skills -->
+<!-- SKILLS -->
 <section id="skills">
-    <h2 class="section-title">Technical Skills</h2>
+<div class="container">
+<div class="section-heading">
+    <h2>Technical <span class="gradient-text">Expertise</span></h2>
+    <p>Technologies and tools I work with</p>
+</div>
 
-    <div class="card">
-        <h3>AI & Agentic Systems</h3>
-        <div class="skills">
-            <span class="skill">Generative AI</span>
-            <span class="skill">Agentic AI</span>
-            <span class="skill">RAG</span>
-            <span class="skill">Multi-Index RAG</span>
-            <span class="skill">MCP</span>
-            <span class="skill">LangChain</span>
-            <span class="skill">LangGraph</span>
-            <span class="skill">Knowledge Graphs</span>
-            <span class="skill">Prompt Engineering</span>
-        </div>
-    </div>
+<div class="skills-grid">
 
-    <div class="card">
-        <h3>AI Models & Platforms</h3>
-        <div class="skills">
-            <span class="skill">OpenAI</span>
-            <span class="skill">Azure OpenAI</span>
-            <span class="skill">Microsoft Foundry</span>
-            <span class="skill">Claude</span>
-            <span class="skill">Gemini</span>
-        </div>
+<div class="card">
+    <h3>AI & Agentic Systems</h3>
+    <div class="tags">
+        <span>Agentic AI</span>
+        <span>RAG</span>
+        <span>MCP</span>
+        <span>LangChain</span>
+        <span>LangGraph</span>
+        <span>Knowledge Graphs</span>
+        <span>Prompt Engineering</span>
     </div>
+</div>
 
-    <div class="card">
-        <h3>Backend & Frontend</h3>
-        <div class="skills">
-            <span class="skill">Python</span>
-            <span class="skill">FastAPI</span>
-            <span class="skill">Flask</span>
-            <span class="skill">REST APIs</span>
-            <span class="skill">JavaScript</span>
-            <span class="skill">React.js</span>
-        </div>
+<div class="card">
+    <h3>LLM Platforms</h3>
+    <div class="tags">
+        <span>OpenAI</span>
+        <span>Azure OpenAI</span>
+        <span>Claude</span>
+        <span>Gemini</span>
+        <span>Microsoft Foundry</span>
     </div>
+</div>
 
-    <div class="card">
-        <h3>Cloud, DevOps & Database</h3>
-        <div class="skills">
-            <span class="skill">Microsoft Azure</span>
-            <span class="skill">GCP</span>
-            <span class="skill">Qdrant</span>
-            <span class="skill">MySQL</span>
-            <span class="skill">Git</span>
-            <span class="skill">GitHub Actions</span>
-            <span class="skill">CI/CD</span>
-        </div>
+<div class="card">
+    <h3>Backend Development</h3>
+    <div class="tags">
+        <span>Python</span>
+        <span>FastAPI</span>
+        <span>Flask</span>
+        <span>REST APIs</span>
+        <span>JavaScript</span>
+        <span>React.js</span>
     </div>
+</div>
+
+<div class="card">
+    <h3>Databases</h3>
+    <div class="tags">
+        <span>Qdrant</span>
+        <span>MySQL</span>
+        <span>MongoDB</span>
+    </div>
+</div>
+
+<div class="card">
+    <h3>Cloud & DevOps</h3>
+    <div class="tags">
+        <span>Microsoft Azure</span>
+        <span>GCP</span>
+        <span>CI/CD</span>
+        <span>GitHub Actions</span>
+        <span>Git</span>
+    </div>
+</div>
+
+<div class="card">
+    <h3>AI Developer Tools</h3>
+    <div class="tags">
+        <span>Claude Code</span>
+        <span>GitHub Copilot</span>
+        <span>Cursor</span>
+        <span>OpenAI Codex</span>
+        <span>Langfuse</span>
+    </div>
+</div>
+
+</div>
+</div>
 </section>
 
-<!-- Experience -->
+<!-- EXPERIENCE -->
 <section id="experience">
-    <h2 class="section-title">Professional Experience</h2>
+<div class="container">
+<div class="section-heading">
+    <h2>Work <span class="gradient-text">Experience</span></h2>
+    <p>My professional journey</p>
+</div>
 
-    <div class="card">
-        <h3>Junior Software Developer – Agentic AI & LLM Systems</h3>
-        <p class="date">
-            Incepteo Labs Private Limited | Oct 2024 – Present
-        </p>
-        <ul>
-            <li>Developed an LLM-powered email assistant for email summarization,
-                intent classification and context-aware replies.</li>
-            <li>Integrated Knowledge Graphs with context-aware retrieval.</li>
-            <li>Implemented multi-agent workflows with stateful conversation
-                handling and task orchestration.</li>
-            <li>Delivered self-hosted MCP servers connecting AI agents
-                with enterprise platforms.</li>
-            <li>Enhanced enterprise knowledge retrieval using semantic
-                search and source-grounded responses.</li>
-        </ul>
-    </div>
+<div class="timeline">
 
-    <div class="card">
-        <h3>Trainee Developer</h3>
-        <p class="date">
-            Swayam Infologic Private Ltd. | Jun 2023 – Sep 2024
-        </p>
-        <ul>
-            <li>Built AI chatbot proof-of-concepts using Python.</li>
-            <li>Integrated OpenAI, Google Gemini and Hugging Face models.</li>
-            <li>Implemented Sentence Transformers and semantic search.</li>
-            <li>Developed backend components and API integrations.</li>
-        </ul>
-    </div>
+<div class="card">
+    <h3>Junior Software Developer – Agentic AI & LLM Systems</h3>
+    <p class="date">Incepteo Labs Private Limited | Oct 2024 – Present</p>
+    <ul>
+        <li>Developed an LLM-powered email assistant.</li>
+        <li>Integrated Knowledge Graphs with context-aware retrieval.</li>
+        <li>Implemented multi-agent workflows and task orchestration.</li>
+        <li>Built self-hosted MCP servers for enterprise integrations.</li>
+        <li>Enhanced document processing and semantic search.</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h3>Trainee Developer</h3>
+    <p class="date">Swayam Infologic Private Ltd. | Jun 2023 – Sep 2024</p>
+    <ul>
+        <li>Built AI chatbot proof-of-concepts using Python.</li>
+        <li>Integrated OpenAI, Gemini and Hugging Face models.</li>
+        <li>Implemented embedding-based semantic search.</li>
+        <li>Developed backend components and API integrations.</li>
+    </ul>
+</div>
+
+</div>
+</div>
 </section>
 
-<!-- Projects -->
+<!-- PROJECTS -->
 <section id="projects">
-    <h2 class="section-title">Featured Projects</h2>
+<div class="container">
+<div class="section-heading">
+    <h2>Featured <span class="gradient-text">Projects</span></h2>
+    <p>Some of the AI solutions I have developed</p>
+</div>
 
-    <div class="card">
-        <h3>StratPilot – AI Productivity & Collaboration Assistant</h3>
-        <p class="date">Incepteo Labs</p>
-        <p>
-            An AI-powered productivity platform designed to automate
-            enterprise workflows through intelligent agents.
-        </p>
-        <br>
-        <ul>
-            <li>Email categorization and context-aware reply generation.</li>
-            <li>Calendar management and follow-up reminders.</li>
-            <li>Tool-calling agents for enterprise operations.</li>
-            <li>Meeting intelligence and transcription integrations.</li>
-            <li>Webhook-driven service synchronization.</li>
-        </ul>
-        <br>
-        <p><strong>Technologies:</strong> Python, FastAPI, LangChain,
-            LangGraph, OpenAI, MCP, Qdrant, MySQL, React.js.</p>
-    </div>
+<div class="project-grid">
 
-    <div class="card">
-        <h3>App Gallery Flex – AI Chatbot Development Platform</h3>
-        <p class="date">Swayam Infologic</p>
-        <p>
-            An AI chatbot development platform that enables organizations
-            to create customized conversational assistants using their
-            own enterprise documents and knowledge.
-        </p>
-        <br>
-        <ul>
-            <li>Document-grounded question-answering workflows.</li>
-            <li>Document ingestion and text processing.</li>
-            <li>Context-aware response generation.</li>
-            <li>Multilingual conversational capabilities.</li>
-        </ul>
-        <br>
-        <p><strong>Technologies:</strong> Python, Flask, FastAPI,
-            LangChain, Azure AI Foundry, Azure OpenAI, Qdrant, MongoDB.</p>
+<div class="project-card">
+    <div class="project-icon">🤖</div>
+    <h3>StratPilot</h3>
+    <p>
+        AI Productivity & Collaboration Assistant.
+        Intelligent agents automate email categorization,
+        context-aware replies, calendar management,
+        meeting intelligence and enterprise workflows.
+    </p>
+    <div class="tech">
+        Python · FastAPI · LangChain · LangGraph · MCP · Qdrant
     </div>
+</div>
+
+<div class="project-card">
+    <div class="project-icon">🧠</div>
+    <h3>App Gallery Flex</h3>
+    <p>
+        AI Chatbot Development Platform.
+        Enables organizations to build customized
+        conversational assistants using document-grounded
+        knowledge retrieval and multilingual capabilities.
+    </p>
+    <div class="tech">
+        Python · Flask · Azure OpenAI · LangChain · MongoDB
+    </div>
+</div>
+
+</div>
+</div>
 </section>
 
-<!-- Certifications -->
+<!-- CERTIFICATIONS -->
 <section id="certifications">
-    <h2 class="section-title">Certifications</h2>
+<div class="container">
+<div class="section-heading">
+    <h2>Certifications & <span class="gradient-text">Learning</span></h2>
+    <p>Continuous learning and professional development</p>
+</div>
 
-    <div class="card">
-        <ul>
-            <li>Claude Academy – Building with the Claude API</li>
-            <li>Claude Academy – Introduction to Model Context Protocol</li>
-            <li>Claude Code in Action</li>
-            <li>Introduction to Claude Cowork</li>
-            <li>Claude Code 101</li>
-            <li>Claude 101</li>
-        </ul>
-        <p class="date">Anthropic</p>
+
+<div class="cert-grid">
+
+    <div class="cert">
+        🏅 Building with the Claude API
+        <br>
+        <a href="https://academy.claude.com/verify/cbbf1863acc6942832205a4c29ecdd78"
+           target="_blank" rel="noopener noreferrer">
+            View Certificate / Course →
+        </a>
     </div>
+
+    <div class="cert">
+        🏅 Introduction to Model Context Protocol
+        <br>
+        <a href="https://academy.claude.com/verify/5732a88309f65cc17f6526bbcf39e4a0"
+           target="_blank" rel="noopener noreferrer">
+            View Certificate / Course →
+        </a>
+    </div>
+
+    <div class="cert">
+        🏅 Claude Code in Action
+        <br>
+        <a href="https://academy.claude.com/verify/b9f8ef075bad9507983399b2cb8275eb"
+           target="_blank" rel="noopener noreferrer">
+            View Certificate / Course →
+        </a>
+    </div>
+
+    <div class="cert">
+        🏅 Introduction to Claude Cowork
+        <br>
+        <a href="https://academy.claude.com/verify/38d1e1fc86ffb97ab883996dcd299495"
+           target="_blank" rel="noopener noreferrer">
+            View Certificate / Course →
+        </a>
+    </div>
+
+    <div class="cert">
+        🏅 Claude Code 101
+        <br>
+        <a href="https://academy.claude.com/verify/4a4a63923d0f8ae6e662b1a8fbe696bb"
+           target="_blank" rel="noopener noreferrer">
+            View Certificate / Course →
+        </a>
+    </div>
+
+    <div class="cert">
+        🏅 Claude 101
+        <br>
+        <a href="https://academy.claude.com/verify/01a118bb8edfb7d3b9473764df9807c4"
+           target="_blank" rel="noopener noreferrer">
+            View Certificate / Course →
+        </a>
+    </div>
+
+</div>
+
+</div>
 </section>
 
-<!-- Education -->
+<!-- EDUCATION -->
 <section id="education">
-    <h2 class="section-title">Education</h2>
+<div class="container">
+<div class="section-heading">
+    <h2>My <span class="gradient-text">Education</span></h2>
+</div>
 
+<div class="project-grid">
     <div class="card">
         <h3>Master's in Computer Science</h3>
         <p>Vikrama Simhapuri University</p>
@@ -416,13 +761,22 @@ footer {
         <p>Vikrama Simhapuri University</p>
         <p class="date">2015 – 2018</p>
     </div>
+</div>
+</div>
 </section>
 
-<!-- Contact -->
-<section id="contact" class="contact">
-    <h2 class="section-title">Let's Connect</h2>
+<!-- CONTACT -->
+<section id="contact">
+<div class="container">
+<div class="contact-box">
+    <h2>Let's Build Something <span class="gradient-text">Intelligent</span></h2>
+    <p>
+        Interested in AI, Agentic AI and innovative software solutions?
+        Let's connect and discuss opportunities.
+    </p>
 
-    <p>Email:
+    <p>
+        Email:
         <a href="mailto:sdshariefsms@gmail.com">
             sdshariefsms@gmail.com
         </a>
@@ -430,20 +784,33 @@ footer {
 
     <p>Phone: +91 77300 82495</p>
 
-    <p>Location: Hyderabad, India</p>
-
-    <p>LinkedIn:
-        <a href="https://linkedin.com/in/sharief24"
-           target="_blank">
-            linkedin.com/in/sharief24
+    <p>
+        LinkedIn:
+        <a href="https://linkedin.com/in/sharief24" target="_blank">
+            Connect on LinkedIn
         </a>
     </p>
+
+    <p>Hyderabad, India</p>
+</div>
+</div>
 </section>
 
 <footer>
-    <p>© 2026 Mahaboob Sharief Syed. All Rights Reserved.</p>
-    <p>Built with HTML & CSS | Agentic AI Engineer</p>
+    © 2026 Mahaboob Sharief Syed | Designed & Developed with Passion
 </footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+}
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("active");
+    });
+});
+</script>
 
 </body>
 </html>
