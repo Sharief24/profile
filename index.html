@@ -2,136 +2,448 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sharief - Personal Profile</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahaboob Sharief Syed | Agentic AI Engineer</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f9;
-            color: #333;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        .container {
-            background: white;
-            width: 90%;
-            max-width: 600px;
-            padding: 40px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #0b1120;
+    color: #e5e7eb;
+    line-height: 1.7;
+}
 
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: #2563eb;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            font-weight: bold;
-            margin: 0 auto 20px;
-        }
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #111827;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
 
-        h1 {
-            color: #2563eb;
-            margin-bottom: 10px;
-        }
+.logo {
+    font-size: 23px;
+    color: #38bdf8;
+    font-weight: bold;
+}
 
-        h3 {
-            margin-top: 25px;
-            margin-bottom: 10px;
-            color: #222;
-        }
+nav a {
+    color: #d1d5db;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+}
 
-        p {
-            line-height: 1.7;
-            color: #666;
-        }
+nav a:hover {
+    color: #38bdf8;
+}
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 15px;
-        }
+section {
+    padding: 70px 8%;
+}
 
-        .skill {
-            background: #e8efff;
-            color: #2563eb;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-        }
+.hero {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(120deg, #111827, #172554);
+}
 
-        .contact {
-            margin-top: 25px;
-            padding: 12px;
-            background: #2563eb;
-            color: white;
-            border-radius: 8px;
-        }
+.hero-content {
+    max-width: 750px;
+}
 
-        .contact a {
-            color: white;
-            text-decoration: none;
-        }
-    </style>
+.hero h1 {
+    font-size: 48px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    color: #38bdf8;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #cbd5e1;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: #0284c7;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.btn:hover {
+    background: #0369a1;
+}
+
+.section-title {
+    font-size: 30px;
+    color: #38bdf8;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: #172033;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #293548;
+}
+
+.card h3 {
+    color: white;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #cbd5e1;
+}
+
+.date {
+    color: #38bdf8 !important;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill {
+    background: #172e48;
+    color: #7dd3fc;
+    padding: 9px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+ul {
+    padding-left: 20px;
+    color: #cbd5e1;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+.contact {
+    background: #111827;
+    text-align: center;
+}
+
+.contact p {
+    margin-bottom: 12px;
+}
+
+.contact a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+footer {
+    background: #080d18;
+    text-align: center;
+    padding: 20px;
+    color: #94a3b8;
+}
+
+@media(max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 5px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    section {
+        padding: 50px 6%;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <div class="container">
+<!-- Navigation -->
+<nav>
+    <div class="logo">Sharief.</div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
 
-        <div class="profile-img">S</div>
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Mahaboob Sharief Syed</h1>
 
-        <h1>Sharief</h1>
-        <p>Software Engineer | Python & AI Developer</p>
+        <h2>Agentic AI Engineer | Python AI Developer</h2>
 
-        <h3>About Me</h3>
         <p>
-            I am a Software Engineer passionate about Python development,
-            Artificial Intelligence, Generative AI, and building
-            innovative software applications.
+            AI Software Developer with 3+ years of experience building
+            AI-driven applications, intelligent agents, RAG systems,
+            and enterprise backend solutions. Passionate about developing
+            scalable AI applications using Python, LLMs, MCP and Agentic AI.
         </p>
 
-        <h3>My Skills</h3>
+        <a href="#contact" class="btn">Contact Me</a>
 
+        <a href="#projects" class="btn">View Projects</a>
+    </div>
+</section>
+
+<!-- About -->
+<section id="about">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="card">
+        <p>
+            I am an AI Software Developer with over 3 years of experience
+            in Python backend development and AI-powered applications.
+            My expertise includes Agentic AI, LLM integration, multi-agent
+            workflows, Retrieval-Augmented Generation (RAG), Knowledge
+            Graphs and Model Context Protocol (MCP).
+        </p>
+        <br>
+        <p>
+            I enjoy building intelligent solutions that automate business
+            workflows, improve information retrieval and solve real-world
+            business problems.
+        </p>
+    </div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+    <h2 class="section-title">Technical Skills</h2>
+
+    <div class="card">
+        <h3>AI & Agentic Systems</h3>
+        <div class="skills">
+            <span class="skill">Generative AI</span>
+            <span class="skill">Agentic AI</span>
+            <span class="skill">RAG</span>
+            <span class="skill">Multi-Index RAG</span>
+            <span class="skill">MCP</span>
+            <span class="skill">LangChain</span>
+            <span class="skill">LangGraph</span>
+            <span class="skill">Knowledge Graphs</span>
+            <span class="skill">Prompt Engineering</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>AI Models & Platforms</h3>
+        <div class="skills">
+            <span class="skill">OpenAI</span>
+            <span class="skill">Azure OpenAI</span>
+            <span class="skill">Microsoft Foundry</span>
+            <span class="skill">Claude</span>
+            <span class="skill">Gemini</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Backend & Frontend</h3>
         <div class="skills">
             <span class="skill">Python</span>
             <span class="skill">FastAPI</span>
             <span class="skill">Flask</span>
-            <span class="skill">OpenAI</span>
-            <span class="skill">LangChain</span>
-            <span class="skill">RAG</span>
+            <span class="skill">REST APIs</span>
+            <span class="skill">JavaScript</span>
             <span class="skill">React.js</span>
-            <span class="skill">MySQL</span>
         </div>
-
-        <h3>Contact Me</h3>
-
-        <div class="contact">
-            <a href="mailto:sharief@example.com">
-                Get In Touch
-            </a>
-        </div>
-
     </div>
+
+    <div class="card">
+        <h3>Cloud, DevOps & Database</h3>
+        <div class="skills">
+            <span class="skill">Microsoft Azure</span>
+            <span class="skill">GCP</span>
+            <span class="skill">Qdrant</span>
+            <span class="skill">MySQL</span>
+            <span class="skill">Git</span>
+            <span class="skill">GitHub Actions</span>
+            <span class="skill">CI/CD</span>
+        </div>
+    </div>
+</section>
+
+<!-- Experience -->
+<section id="experience">
+    <h2 class="section-title">Professional Experience</h2>
+
+    <div class="card">
+        <h3>Junior Software Developer – Agentic AI & LLM Systems</h3>
+        <p class="date">
+            Incepteo Labs Private Limited | Oct 2024 – Present
+        </p>
+        <ul>
+            <li>Developed an LLM-powered email assistant for email summarization,
+                intent classification and context-aware replies.</li>
+            <li>Integrated Knowledge Graphs with context-aware retrieval.</li>
+            <li>Implemented multi-agent workflows with stateful conversation
+                handling and task orchestration.</li>
+            <li>Delivered self-hosted MCP servers connecting AI agents
+                with enterprise platforms.</li>
+            <li>Enhanced enterprise knowledge retrieval using semantic
+                search and source-grounded responses.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>Trainee Developer</h3>
+        <p class="date">
+            Swayam Infologic Private Ltd. | Jun 2023 – Sep 2024
+        </p>
+        <ul>
+            <li>Built AI chatbot proof-of-concepts using Python.</li>
+            <li>Integrated OpenAI, Google Gemini and Hugging Face models.</li>
+            <li>Implemented Sentence Transformers and semantic search.</li>
+            <li>Developed backend components and API integrations.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+    <h2 class="section-title">Featured Projects</h2>
+
+    <div class="card">
+        <h3>StratPilot – AI Productivity & Collaboration Assistant</h3>
+        <p class="date">Incepteo Labs</p>
+        <p>
+            An AI-powered productivity platform designed to automate
+            enterprise workflows through intelligent agents.
+        </p>
+        <br>
+        <ul>
+            <li>Email categorization and context-aware reply generation.</li>
+            <li>Calendar management and follow-up reminders.</li>
+            <li>Tool-calling agents for enterprise operations.</li>
+            <li>Meeting intelligence and transcription integrations.</li>
+            <li>Webhook-driven service synchronization.</li>
+        </ul>
+        <br>
+        <p><strong>Technologies:</strong> Python, FastAPI, LangChain,
+            LangGraph, OpenAI, MCP, Qdrant, MySQL, React.js.</p>
+    </div>
+
+    <div class="card">
+        <h3>App Gallery Flex – AI Chatbot Development Platform</h3>
+        <p class="date">Swayam Infologic</p>
+        <p>
+            An AI chatbot development platform that enables organizations
+            to create customized conversational assistants using their
+            own enterprise documents and knowledge.
+        </p>
+        <br>
+        <ul>
+            <li>Document-grounded question-answering workflows.</li>
+            <li>Document ingestion and text processing.</li>
+            <li>Context-aware response generation.</li>
+            <li>Multilingual conversational capabilities.</li>
+        </ul>
+        <br>
+        <p><strong>Technologies:</strong> Python, Flask, FastAPI,
+            LangChain, Azure AI Foundry, Azure OpenAI, Qdrant, MongoDB.</p>
+    </div>
+</section>
+
+<!-- Certifications -->
+<section id="certifications">
+    <h2 class="section-title">Certifications</h2>
+
+    <div class="card">
+        <ul>
+            <li>Claude Academy – Building with the Claude API</li>
+            <li>Claude Academy – Introduction to Model Context Protocol</li>
+            <li>Claude Code in Action</li>
+            <li>Introduction to Claude Cowork</li>
+            <li>Claude Code 101</li>
+            <li>Claude 101</li>
+        </ul>
+        <p class="date">Anthropic</p>
+    </div>
+</section>
+
+<!-- Education -->
+<section id="education">
+    <h2 class="section-title">Education</h2>
+
+    <div class="card">
+        <h3>Master's in Computer Science</h3>
+        <p>Vikrama Simhapuri University</p>
+        <p class="date">2018 – 2020</p>
+    </div>
+
+    <div class="card">
+        <h3>B.Sc. in Computer Science</h3>
+        <p>Vikrama Simhapuri University</p>
+        <p class="date">2015 – 2018</p>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact">
+    <h2 class="section-title">Let's Connect</h2>
+
+    <p>Email:
+        <a href="mailto:sdshariefsms@gmail.com">
+            sdshariefsms@gmail.com
+        </a>
+    </p>
+
+    <p>Phone: +91 77300 82495</p>
+
+    <p>Location: Hyderabad, India</p>
+
+    <p>LinkedIn:
+        <a href="https://linkedin.com/in/sharief24"
+           target="_blank">
+            linkedin.com/in/sharief24
+        </a>
+    </p>
+</section>
+
+<footer>
+    <p>© 2026 Mahaboob Sharief Syed. All Rights Reserved.</p>
+    <p>Built with HTML & CSS | Agentic AI Engineer</p>
+</footer>
 
 </body>
 </html>
